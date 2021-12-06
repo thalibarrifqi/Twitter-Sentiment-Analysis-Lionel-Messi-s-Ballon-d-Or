@@ -1,0 +1,35 @@
+# # Replace with your own search query
+# query = 'Messi -is:retweet -https'
+
+# j=0
+# tweets_data = []
+# for i, tweet in enumerate(tweepy.Paginator(client.search_recent_tweets, query=query, tweet_fields=['created_at', 'public_metrics', 'lang'], user_fields=['name', 'username'], expansions='author_id', 
+#                               max_results=100).flatten(limit=40)):
+#     j += 1
+#     if j==10:
+#         j=0
+#         now = datetime.now()
+#         current_time = now.strftime("%H:%M:%S")
+#         print('Waiting.........................')
+#         print('Paused at',current_time)
+#         time.sleep(1)
+#     else:
+#         tweet_id = tweet.id
+#         created_at = tweet.created_at
+#         text = tweet.text
+#         language = tweet.data['lang']
+#         like = tweet.data['public_metrics']['like_count']
+#         retweet = tweet.data['public_metrics']['retweet_count']
+#         name = client.get_user(id=tweet.author_id).data.name
+#         username = client.get_user(id=tweet.author_id).data.username
+#         properties = {
+#             'tweet_id':tweet_id,
+#             'created_at':created_at,
+#             'text':text,
+#             'language':language,
+#             'like':like,
+#             'retweet':retweet,
+#             'name':name,
+#             '@username':username
+#         }
+#         tweets_data.append(properties)
